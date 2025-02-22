@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-bars" id="sidebar-toggle"></i>
+        <h2>Feel the music</h2>
+        <i class="fa-solid fa-music"></i>
+    </header>
+    <div id="sidebar" class="sidebar">
+        <h3>Song List</h3>
+        <ul id="song-list"></ul>
+    </div>
+    <main>
+        <div class="song song-part"> 
+            <div class="song-part song">
+                <h3>Now Playing</h3>
+                <div class="song-img"></div>
+            </div>
+            <audio id="audio-player"></audio>
+            <div class="vol">
+                <div class="vol-icon">
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+                <input type="range" name="Volume-range" id="vol-range" aria-label="Volume control">
+            </div>
+        </div>
+        <div class="song-play">
+            <div class="song-details">
+                <marquee direction="left" class="song-name">Aaj ki raat</marquee>
+                <h4 class="singer-name">Payal dev</h4>
+            </div>
+            <div class="time-display">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress" min="0" max="100" value="0" aria-label="Song progress">
+                <span id="duration">0:00</span>
+            </div>
+            <div class="song-control">
+                <div class="prev-song">
+                    <i class="fa-solid fa-backward-step" id="prev-song" onclick="prevSong()"></i>
+                </div> 
+                <div class="play-song">
+                    <i class="fa-solid fa-play" id="play" onclick="playPause()"></i>
+                </div>
+                <div class="next-song">
+                    <i class="fa-solid fa-forward-step" id="next-song" onclick="nextSong()"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
